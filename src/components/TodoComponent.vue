@@ -1,8 +1,12 @@
 <template>
   <div>
-    {{ todo.checked }}
     <input type="checkbox" :checked="todo.checked" @change="toggleCheckbox" />
-    <span class="ms-2">{{ todo.text }}</span>
+    <span
+      class="ms-2"
+      :class="todo.checked ? 'text-muted' : ''"
+      :style="todo.checked ? 'text-decoration: line-through' : ''"
+      >{{ todo.text }}</span
+    >
   </div>
 </template>
 
