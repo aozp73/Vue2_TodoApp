@@ -3,8 +3,7 @@
     <h1 class="text-center">Todo App</h1>
     <input type="text" class="w-100 p-2" placeholder="Type todo" />
     <hr />
-    <Todo />
-    <Todo />
+    <Todo v-for="todo in todos" :key="todo.id" :todo="todo" />
   </div>
 </template>
 
@@ -14,6 +13,14 @@ import Todo from "@/components/TodoComponent.vue";
 export default {
   components: {
     Todo,
+  },
+  data() {
+    return {
+      todos: [
+        { id: 1, text: "buy a book", checked: false },
+        { id: 2, text: "play game", checked: false },
+      ],
+    };
   },
 };
 </script>
