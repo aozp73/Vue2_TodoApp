@@ -4,7 +4,12 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    todos: [
+      { id: 1, text: "buy a book", checked: false },
+      { id: 2, text: "play game", checked: false },
+    ],
+  },
   mutations: {},
   actions: {},
   getters: {},
