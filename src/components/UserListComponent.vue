@@ -9,19 +9,26 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
   created() {
     this.getUsers();
   },
   computed: {
-    users() {
-      return this.$store.state.users;
-    },
+    ...mapState(["todos"]),
+    // users() {
+    //   return this.$store.state.users;
+    // },
+    // todos() {
+    //   return this.$store.state.todos;
+    // },
   },
   methods: {
-    getUsers() {
-      this.$store.dispatch("getUsers");
-    },
+    ...mapActions(["getUsers"]),
+    // getUsers() {
+    //   this.$store.dispatch("getUsers");
+    // },
   },
 };
 </script>
