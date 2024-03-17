@@ -24,11 +24,28 @@ export default new Vuex.Store({
       });
       state.todos[index].checked = checked;
     },
-    DELETE_TODO(state, todoID) {
-      const index = state.todos.findIndex((todo) => todo.id !== todoID);
+    DELETE_TODO(state, todoId) {
+      const index = state.todos.findIndex((todo) => todo.id !== todoId);
       state.todos.splice(index, 1);
     },
   },
-  actions: {},
+  actions: {
+    addTodo({ commit }, value) {
+      // 비동기 작업 수행 (axiox.post() 등)
+      setTimeout(function () {
+        commit("ADD_TODO", value);
+      }, 1000);
+    },
+    toogleTodo({ commit }, payload) {
+      setTimeout(function () {
+        commit("TOGGLE_TODO", payload);
+      }, 1000);
+    },
+    deleteTodo({ commit }, todoId) {
+      setTimeout(function () {
+        commit("DELETE_TODO", todoId);
+      }, 1000);
+    },
+  },
   getters: {},
 });

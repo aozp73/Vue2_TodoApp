@@ -5,7 +5,6 @@
     <AddTodo />
     <hr />
     <TodoList />
-    {{ todos }}
   </div>
 </template>
 
