@@ -2,9 +2,9 @@
   <div id="app" class="container">
     <h1 class="text-center">Todo App</h1>
     <CompletedTodo />
-    <AddTodo @add-todo="addTodo" />
+    <AddTodo />
     <hr />
-    <TodoList @toggle-checkbox="toggleCheckeBox" @click-delete="deleteTodo" />
+    <TodoList />
     {{ todos }}
   </div>
 </template>
@@ -26,23 +26,24 @@ export default {
     };
   },
   methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-    },
-    addTodo(value) {
-      this.todos.push({
-        id: Math.random(),
-        text: value,
-        checked: false,
-      });
-      this.todoText = "";
-    },
-    toggleCheckeBox({ id, checked }) {
-      const index = this.todos.findIndex((todo) => {
-        return todo.id === id;
-      });
-      this.todos[index].checked = checked;
-    },
+    // deleteTodo(id) {
+    //   const index = this.todos.findIndex((todo) => todo.id !== id);
+    //   this.todos.splice(index, 1);
+    // },
+    // addTodo(value) {
+    //   this.todos.push({
+    //     id: Math.random(),
+    //     text: value,
+    //     checked: false,
+    //   });
+    //   this.todoText = "";
+    // },
+    // toggleCheckeBox({ id, checked }) {
+    //   const index = this.todos.findIndex((todo) => {
+    //     return todo.id === id;
+    //   });
+    //   this.todos[index].checked = checked;
+    // },
   },
 };
 </script>
