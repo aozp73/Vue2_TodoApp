@@ -5,6 +5,7 @@
     <AddTodo />
     <hr />
     <TodoList />
+    <UserList />
   </div>
 </template>
 
@@ -12,12 +13,14 @@
 import TodoList from "@/components/TodoListComponent.vue";
 import AddTodo from "@/components/AddTodoComponent.vue";
 import CompletedTodo from "@/components/CompletedTodoComponent.vue";
+import UserList from "@/components/UserListComponent.vue";
 
 export default {
   components: {
     TodoList,
     AddTodo,
     CompletedTodo,
+    UserList,
   },
   data() {
     return {
