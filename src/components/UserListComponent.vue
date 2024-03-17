@@ -16,7 +16,9 @@ export default {
     this.getUsers();
   },
   computed: {
-    ...mapState(["todos"]),
+    ...mapState({
+      users: (state) => state.user.users,
+    }),
     // users() {
     //   return this.$store.state.users;
     // },
@@ -25,7 +27,7 @@ export default {
     // },
   },
   methods: {
-    ...mapActions(["getUsers"]),
+    ...mapActions("user", ["getUsers"]),
     // getUsers() {
     //   this.$store.dispatch("getUsers");
     // },
